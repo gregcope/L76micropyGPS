@@ -38,7 +38,7 @@ class L76micropyGPS:
         self.i2c.writeto(GPS_I2CADDR, self.reg)
 
         # start thread feeding microGPS
-        _thread.start_new_thread(feedMicroGPS, '')
+        _thread.start_new_thread(self.feedMicroGPS())
 
     def feedMicroGPS(self):
         print('Running feedGps_thread id: {}'.format(_thread.get_ident()))
