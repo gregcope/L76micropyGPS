@@ -18,7 +18,7 @@ print("Free Mem post pytrack instantiation: {}".format(gc.mem_free()))
 my_gps = MicropyGPS()
 print("Free Mem post my_gps instantiation: {}".format(gc.mem_free()))
 
-L76micropyGPS = L76micropyGPS(my_gps, py, timeout=600)
+L76micropyGPS = L76micropyGPS(my_gps, py)
 #start rtc
 rtc = machine.RTC()
 print("Free Mem post rtc instantiation: {}".format(gc.mem_free()))
@@ -28,7 +28,7 @@ print('Aquiring GPS signal ', end='')
 #try to get gps date to config rtc
 
 while (True):
-    print("my_gps.parsed_sentences : {}".format(my_gps.parsed_sentences))
+    print("my_gps.parsed_sentences : {}".format(my_gps.parsed_sentences()))
     time.sleep(2)
 
 # switch off heartbeat LED
