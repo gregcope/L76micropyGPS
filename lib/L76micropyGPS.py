@@ -60,7 +60,7 @@ class L76micropyGPS:
 
             # Pass NMEA data to micropyGPS object
             for x in someNmeaData:
-                self.my_gps.update(x)
+                self.my_gps.update(str(x))
 
             # tidy
             gc.collect()
