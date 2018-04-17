@@ -15,7 +15,7 @@ print("Free Mem: {}".format(gc.mem_free()))
 py = Pytrack()
 print("Free Mem post pytrack instantiation: {}".format(gc.mem_free()))
 
-my_gps = MicropyGPS()
+my_gps = MicropyGPS(location_formatting='dd')
 print("Free Mem post my_gps instantiation: {}".format(gc.mem_free()))
 
 L76micropyGPS = L76micropyGPS(my_gps, py)
