@@ -43,7 +43,7 @@ class L76micropyGPS:
         while True:
             # get some NMEA data
             someNmeaData = str(self.i2c.readfrom(GPS_I2CADDR, 128))
-            print(" feedGps_thread - gpsChars recieved : {}".format(len(someNmeaData)))
+            #print(" feedGps_thread - gpsChars recieved : {}".format(len(someNmeaData)))
             #print(" NMEA data: {}".format(str(someNmeaData)))
 
             # Pass NMEA data to micropyGPS object
