@@ -35,7 +35,7 @@ class L76micropyGPS:
 
     def startGPSThread(self):
         # start thread feeding microGPS
-        self.gps_thread = _thread.start_new_thread(self.feedMicroGPS())
+        self.gps_thread = _thread.start_new_thread(self.feedMicroGPS)
 
     def feedMicroGPS(self):
         print('Running feedGps_thread id: {}'.format(_thread.get_ident()))
