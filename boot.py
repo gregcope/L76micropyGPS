@@ -8,9 +8,6 @@ start = utime.ticks_us()
 uart = UART(0, baudrate=115200)
 os.dupterm(uart)
 
-# Initialise some other objects
-py = Pytrack()
-
 machine.main('main.py')
 
 end = utime.ticks_us()
