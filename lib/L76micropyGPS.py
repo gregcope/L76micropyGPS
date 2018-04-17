@@ -28,6 +28,10 @@ class L76micropyGPS:
         #self.searchmode = "$PMTK353,1,1,1,1,0*2B\r\n"
         #self.i2c.writeto(GPS_I2CADDR, self.searchmode)
         self.i2c.writeto(GPS_I2CADDR, "$PMTK353,1,1,1,1,0*2B\r\n")
+        # Increase output rate to 5Hz
+        #self.fivehz = "$PMTK220,200*2C\r\n"
+        #self.i2c.writeto(GPS_I2CADDR, self.fivehz)
+        self.i2c.writeto(GPS_I2CADDR, "$PMTK220,200*2C\r\n")
 
         # Do an empty write ...
         self.reg = bytearray(1)
@@ -35,7 +39,7 @@ class L76micropyGPS:
 
     def startGPSThread(self):
         # start thread feeding microGPS
-        self.gps_thread = _thread.start_new_thread(self.feedMicroGPS())
+        self.gps_thread = _thread.start_new_thread(self.feedMicroGPS,())
 
     def feedMicroGPS(self):
         print('Running feedGps_thread id: {}'.format(_thread.get_ident()))
