@@ -24,18 +24,23 @@ class L76micropyGPS:
         #self.stoplog = "$PMTK185,1*23\r\n"
         #self.i2c.writeto(GPS_I2CADDR, self.stoplog)
         self.i2c.writeto(GPS_I2CADDR, "$PMTK185,1*23\r\n")
+        self.i2c.writeto(GPS_I2CADDR, bytes([0]))
         # Use GPS, GONASS, GALILEO and GALILEO Full satellites
         #self.searchmode = "$PMTK353,1,1,1,1,0*2B\r\n"
         #self.i2c.writeto(GPS_I2CADDR, self.searchmode)
         self.i2c.writeto(GPS_I2CADDR, "$PMTK353,1,1,1,1,0*2B\r\n")
+        self.i2c.writeto(GPS_I2CADDR, bytes([0]))
         # Increase output rate to 5Hz
         #self.fivehz = "$PMTK220,200*2C\r\n"
         #self.i2c.writeto(GPS_I2CADDR, self.fivehz)
         self.i2c.writeto(GPS_I2CADDR, "$PMTK220,200*2C\r\n")
+        self.i2c.writeto(GPS_I2CADDR, bytes([0]))
 
         # Do an empty write ...
-        self.reg = bytearray(1)
-        self.i2c.writeto(GPS_I2CADDR, self.reg)
+        #self.reg = bytearray(1)
+        # can be also written as
+        # self.i2c.writeto(GPS_I2CADDR, bytes([0]))
+        #self.i2c.writeto(GPS_I2CADDR, self.reg)
 
     def startGPSThread(self):
         # start thread feeding microGPS
@@ -53,4 +58,4 @@ class L76micropyGPS:
             # Pass NMEA data to micropyGPS object
             for x in someNmeaData:
                 self.my_gps.update(str(x))
-            time.sleep(2)
+            time.sleep(0.25)
