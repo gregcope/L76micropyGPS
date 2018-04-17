@@ -32,7 +32,8 @@ print('Aquiring GPS signal ', end='')
 #try to get gps date to config rtc
 
 while (True):
-    print("my_gps.parsed_sentences : {}".format(my_gps.parsed_sentences()))
+    print("my_gps.parsed_sentences: {}".format(my_gps.parsed_sentences()))
+    print("my_gps.satellites_in_use: {}".format(my_gps.satellites_in_use()))
     time.sleep(2)
 
 # switch off heartbeat LED
