@@ -19,6 +19,10 @@ my_gps = MicropyGPS()
 print("Free Mem post my_gps instantiation: {}".format(gc.mem_free()))
 
 L76micropyGPS = L76micropyGPS(my_gps, py)
+
+gpsThread = L76micropyGPS.startGPSThread()
+print("startGPSThread thread id is: " + startGPSThread)
+
 #start rtc
 rtc = machine.RTC()
 print("Free Mem post rtc instantiation: {}".format(gc.mem_free()))
