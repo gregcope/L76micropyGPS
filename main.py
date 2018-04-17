@@ -34,7 +34,10 @@ print('Aquiring GPS signal ', end='')
 while (True):
     print("my_gps.parsed_sentences: {}".format(my_gps.parsed_sentences))
     print("my_gps.satellites_in_use: {}".format(my_gps.satellites_in_use))
-    time.sleep(2)
+    print("my_gps.date: {}".format(my_gps.date))
+    print("my_gps.timestamp: {}".format(my_gps.timestamp))
+    print("my_gps.hdop: {}".format(my_gps.hdop))
+    time.sleep(1)
 
 # switch off heartbeat LED
 #pycom.heartbeat(False)
