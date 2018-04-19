@@ -28,13 +28,13 @@ class L76micropyGPS:
         # Use GPS, GONASS, GALILEO and GALILEO Full satellites
         #self.searchmode = "$PMTK353,1,1,1,1,0*2B\r\n"
         #self.i2c.writeto(GPS_I2CADDR, self.searchmode)
-        self.i2c.writeto(GPS_I2CADDR, "$PMTK353,1,1,1,1,0*2B\r\n")
-        self.i2c.writeto(GPS_I2CADDR, bytes([0]))
+        #self.i2c.writeto(GPS_I2CADDR, "$PMTK353,1,1,1,1,0*2B\r\n")
+        #self.i2c.writeto(GPS_I2CADDR, bytes([0]))
         # Increase output rate to 5Hz
         #self.fivehz = "$PMTK220,200*2C\r\n"
         #self.i2c.writeto(GPS_I2CADDR, self.fivehz)
-        self.i2c.writeto(GPS_I2CADDR, "$PMTK220,200*2C\r\n")
-        self.i2c.writeto(GPS_I2CADDR, bytes([0]))
+        #self.i2c.writeto(GPS_I2CADDR, "$PMTK220,200*2C\r\n")
+        #self.i2c.writeto(GPS_I2CADDR, bytes([0]))
 
         # Do an empty write ...
         #self.reg = bytearray(1)
