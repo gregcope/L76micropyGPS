@@ -37,6 +37,7 @@ while (True):
     print("my_gps.date: {}".format(my_gps.date))
     print("my_gps.timestamp: {}".format(my_gps.timestamp))
     print("my_gps.hdop: {}".format(my_gps.hdop))
+    print("Free Mem: {}".format(gc.mem_free()))
     time.sleep(1)
 
 # switch off heartbeat LED
