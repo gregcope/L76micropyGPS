@@ -1,5 +1,9 @@
 # L76micropyGPS
-A pytrack L76 class that feeds a micropyGPS object POC
+A ``pytrack L76`` class that feeds a ``micropyGPS`` object POC.  Based on the excellent ``micropyGPS``, that is in turn based on the most excellent ``tinyGPS++`` ``C++`` Ardunio class.
+
+The idea is to take advantage of microPython threading to setup a ``GPS/GNS`` system that in the background is constantly updating its data based on the ``NMEA`` data is receives, without having to constantly call it to update itself.  It does this by having a thread that constantly reads the ``NMEA`` sentences from the devices and parses them into ``GPS/GNS`` variables so that they can be read by python code.
+
+This allows you to fire up the ``GPS/GNS pytrack L76`` module, go do other things like check other sensors, or setup a WIFI/HTTP[S]/LTE/LORA connection, then go back and see if you have ``GPS/GNS`` data worth using yet.
 
 Intro
 ================
