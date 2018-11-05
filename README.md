@@ -8,9 +8,10 @@ This allows you to fire up the ``GPS/GNS pytrack L76`` module, go do other thing
 Intro
 ================
 * Assumes USB connected Pytrack/Pycom modules (e.g Gpy) to print messages to the console/uart.
-* Uses the fabulous MicroGPS module from https://github.com/inmcm/micropyGPS
-* Uses some Pytrack/PySense code from 
+* Uses the fabulous ``microGPS`` module from https://github.com/inmcm/micropyGPS
+* Uses some ``Pytrack/PySense`` code from 
 https://github.com/pycom/pycom-libraries/blob/master/pytrack/lib/pytrack.py
+* ``microGPS based on ``tinyGPS++`` https://github.com/mikalhart/TinyGPSPlus
 
 Usage
 =================
