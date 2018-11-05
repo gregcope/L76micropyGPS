@@ -11,7 +11,7 @@ Intro
 * Uses the fabulous ``microGPS`` module from https://github.com/inmcm/micropyGPS
 * Uses some ``Pytrack/PySense`` code from 
 https://github.com/pycom/pycom-libraries/blob/master/pytrack/lib/pytrack.py
-* ``microGPS based on ``tinyGPS++`` https://github.com/mikalhart/TinyGPSPlus
+* ``microGPS`` based on ``tinyGPS++`` https://github.com/mikalhart/TinyGPSPlus
 
 Usage
 =================
