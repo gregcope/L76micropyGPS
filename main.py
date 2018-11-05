@@ -16,25 +16,29 @@ gc.enable()
 
 print("Free Mem: {}".format(gc.mem_free()))
 
-# Start GPS
+# Start GPS, you need this line
 py = Pytrack()
+
 print("Free Mem post pytrack instantiation: {}".format(gc.mem_free()))
 
-# Start a microGPS object
+# Start a microGPS object, you need this line
 my_gps = MicropyGPS(location_formatting='dd')
+
 print("Free Mem post my_gps instantiation: {}".format(gc.mem_free()))
 
-# Start the L76micropyGPS object
+# Start the L76micropyGPS object, you need this line
 L76micropyGPS = L76micropyGPS(my_gps, py)
 
-# Start the thread
+# Start the thread, you need this line
 gpsThread = L76micropyGPS.startGPSThread()
+
 print("startGPSThread thread id is: {}".format(gpsThread))
 
 #
-# Do what you like now
+# Do what you like now, examples below
 # at some point you should want to read GPS/GNS data
-# example below
+# you need none of these lines, but I would assume
+# at least one line doing something with my_gps object ...
 # 
 
 #start rtc
