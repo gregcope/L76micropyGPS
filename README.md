@@ -20,7 +20,9 @@ Use the ``main.py`` code as an example.  The ``print`` statements can be removed
 
 NOTES
 =================
-*Presently the ``pycoproc`` code assumes an ``i2c`` ID of ``0`` here; https://github.com/pycom/pycom-libraries/blob/master/lib/pycoproc/pycoproc.py#L78
+*Presently* the ``pycoproc`` code assumes an ``i2c`` ID of ``0`` here; https://github.com/pycom/pycom-libraries/blob/master/lib/pycoproc/pycoproc.py#L78  If you use another ``i2c`` device give it an ID above 0! ``thing.i2c = I2C(C1, foo, bar)``
+
+Thanks to ``tttadam``` on the pycom forums for spotting; https://forum.pycom.io/topic/3870/pytrack-gps-library/10
 
 
 Todo
