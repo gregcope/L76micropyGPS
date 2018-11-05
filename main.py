@@ -6,22 +6,36 @@ from micropyGPS import MicropyGPS
 from pytrack import Pytrack
 import gc
 
+#
+# You will need the following lines
+# The print statements can be removed - they are just here to debug
+#
+
 # enable GC
 gc.enable()
 
 print("Free Mem: {}".format(gc.mem_free()))
 
-#Start GPS
+# Start GPS
 py = Pytrack()
 print("Free Mem post pytrack instantiation: {}".format(gc.mem_free()))
 
+# Start a microGPS object
 my_gps = MicropyGPS(location_formatting='dd')
 print("Free Mem post my_gps instantiation: {}".format(gc.mem_free()))
 
+# Start the L76micropyGPS object
 L76micropyGPS = L76micropyGPS(my_gps, py)
 
+# Start the thread
 gpsThread = L76micropyGPS.startGPSThread()
 print("startGPSThread thread id is: {}".format(gpsThread))
+
+#
+# Do what you like now
+# at some point you should want to read GPS/GNS data
+# example below
+# 
 
 #start rtc
 rtc = machine.RTC()
@@ -31,6 +45,10 @@ print("RTC time : {}".format(rtc.now()))
 print('Aquiring GPS signal ', end='')
 #try to get gps date to config rtc
 
+#
+# Just and example while thread to spit out
+# GPS/GNS data to the console/uart
+#
 while (True):
     print("my_gps.parsed_sentences: {}".format(my_gps.parsed_sentences))
     print("my_gps.satellites_in_use: {}".format(my_gps.satellites_in_use))
